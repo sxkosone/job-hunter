@@ -1,0 +1,11 @@
+<h1>Log in</h1>
+<p>Find me in app/views/sessions/login.html.erb</p>
+<%= flash.notice %>
+
+<%= form_tag login_path do %>
+    <label for="">Username:</label>
+    <%= text_field_tag :username %>
+    <label for="">Password:</label>
+    <%= password_field_tag :password %>
+    <%= submit_tag "Log in" %>
+<% end %>

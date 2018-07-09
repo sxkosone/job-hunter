@@ -1,0 +1,4 @@
+<h1>Sign Up</h1>
+<%= form_for @user do |f| %>
+    <%= render partial: "form", locals: {user: @user, f: f} %>
+<% end %>
