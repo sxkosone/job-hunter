@@ -7,7 +7,9 @@ class TasksController < ApplicationController
         redirect_back fallback_location: user_path(logged_in_user)
     end
     def update
-        Task.update(params[:id],task_params(:description,:done))
+        task = Task.find(params[:id])
+        task.update(task_params(:description,:done))
+        #byebug
         redirect_back fallback_location: user_path(logged_in_user)
     end
 

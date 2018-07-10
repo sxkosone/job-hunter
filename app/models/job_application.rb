@@ -9,4 +9,9 @@ class JobApplication < ApplicationRecord
   def self.status
     @@STATUS
   end
+
+  def completion_percentage
+    all_tasks = self.tasks
+    (all_tasks.count {|task| task.done == true}.to_f / all_tasks.length * 100).round
+  end
 end

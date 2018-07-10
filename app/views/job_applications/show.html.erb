@@ -4,7 +4,7 @@
 <p>Posted: <%= @job.posted_date %></p>
 
 <h1>Application status</h1>
-<h2>Completed: <%= @job_application.percentage %> / 100 %</h2>
+<h2>Completed: <%= @job_application.completion_percentage %> / 100 %</h2>
 <h2>Status:</h2>
 <%= form_tag application_path, method: "patch" do %>
     <%= select_tag "job_application[status]", 
@@ -19,7 +19,7 @@
     <!-- List of tasks -->
     <ul>
         <% @tasks.each do |task| %>
-            <li><%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
+            <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();"},(task.done ? 0 : 1),(task.done ? 'true' : 'false' )) %>  <% end %> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
         <% end %>
     </ul>
      <%#Add new task  %>
