@@ -1,2 +1,14 @@
-<h1>JobApplications#show</h1>
-<p>Find me in app/views/job_applications/show.html.erb</p>
+<h1>Your application to: <%= @job.company %></h1>
+<h2><%= @job.position %></h2>
+<p><%= @job.description %></p>
+<p>Posted: <%= @job.posted_date %></p>
+
+<h1>Application status</h1>
+<h2>Completed: <%= @job_application.percentage %> / 100 %</h2>
+<h2>Status:</h2>
+<%= form_tag application_path, method: "patch" do %>
+    <%= select_tag "job_application[status]", 
+    options_for_select(JobApplication.status, 
+    @job_application.status), 
+    :onchange => "this.form.submit();" %>
+<% end %>
