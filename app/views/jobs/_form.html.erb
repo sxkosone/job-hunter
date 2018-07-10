@@ -1,0 +1,13 @@
+<%= form_for job do |f| %>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= f.label :posted_date %>
+    <%= f.date_field :posted_date %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <%= f.submit "Add job" %>
+<% end %>

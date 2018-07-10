@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #JOB APPLICATIONS
   get 'applications/:id', to: "job_applications#show", as: "application"
   get '/:username/applications', to: "job_applications#index", as: "applications"
-  get '/:username/applications/new', to: "job_applications#new", as: "new_application"
+  get '/:username/applications/new', to: "job_applications#new", as: "new_application" #should this rather be /:job_id/apply or something
   post '/:username/applications', to: "job_applications#create"
   get '/applications/:id/edit', to: "job_applications#edit", as: "edit_application"
   patch '/applications/:id', to: "job_applications#new"

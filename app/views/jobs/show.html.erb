@@ -1,2 +1,11 @@
 <h1>Jobs#show</h1>
 <p>Find me in app/views/jobs/show.html.erb</p>
+
+<h1><%= @job.position %> at <%= @job.company %></h1>
+<h6>Posted: <%= @job.posted_date %>, City: <%= @job.city %></h6>
+<p><%= @job.description %></p>
+<% if @job.url %>
+    <%= link_to 'External Job Posting', @job.url, target="_blank" %>
+<% end %>
+
+<%= link_to 'Delete this Job', job_path(@job), method: "DELETE" %>

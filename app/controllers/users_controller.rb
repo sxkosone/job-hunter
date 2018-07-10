@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params(:name, :username, :profession, :city, :password, :password_confirmation))
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       #redirect to their dashboard or user show page
       redirect_to user_path(@user.username)
     else
