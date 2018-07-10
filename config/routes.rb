@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   patch '/tasks/:id', to: "tasks#update", as: 'task'
   delete '/tasks/:id', to: "tasks#destroy"
 
+  #Events
+  post '/events', to: "events#create"
+  patch '/events/:id', to: "events#update", as: 'event'
+  delete '/events/:id', to: "events#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

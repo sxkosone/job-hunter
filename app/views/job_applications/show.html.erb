@@ -30,3 +30,24 @@
         <%= submit_tag "Add Task" %>
      <% end %>
 </div>
+
+<div>
+    <h2>Events:</h2>
+    <!-- List of Events -->
+    <ul>
+        <% @events.each do |event| %>
+            <li><%= event.title %> - <%= event.address %> - <%= event.date %> <%= link_to "x", event_path(event), method: "delete" %></li>
+        <% end %>
+    </ul>
+     <%#Add new event  %>
+     <%= form_tag events_path do %>
+        <%= label_tag :title %>
+        <%= text_field_tag "event[title]" %>
+        <%= label_tag :address %>
+        <%= text_field_tag "event[address]" %>
+        <%= label_tag :date %>
+        <%= date_field_tag "event[date]"%>
+        <%= hidden_field_tag "event[job_application_id]", @job_application.id %>
+        <%= submit_tag "Add Event" %>
+     <% end %>
+</div>
