@@ -26,5 +26,11 @@ Rails.application.routes.draw do
   patch '/:username', to: 'users#update'
   delete '/:username', to: 'users#destroy'
 
+  #Tasks
+  post '/tasks', to: "tasks#create"
+  patch '/tasks/:id', to: "tasks#update", as: 'task'
+  delete '/tasks/:id', to: "tasks#destroy"
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -12,3 +12,21 @@
     @job_application.status), 
     :onchange => "this.form.submit();" %>
 <% end %>
+
+
+<div>
+    <h2>Tasks:</h2>
+    <!-- List of tasks -->
+    <ul>
+        <% @tasks.each do |task| %>
+            <li><%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
+        <% end %>
+    </ul>
+     <%#Add new task  %>
+     <%= form_tag tasks_path do %>
+        <%= label_tag :description %>
+        <%= text_field_tag "task[description]" %>
+        <%= hidden_field_tag "task[job_application_id]", @job_application.id %>
+        <%= submit_tag "Add Task" %>
+     <% end %>
+</div>
