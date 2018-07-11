@@ -15,25 +15,11 @@
 
 
 <div>
-    <h2>Tasks:</h2>
+    <h2>To do for this application:</h2>
     <!-- List of tasks -->
-    <ul>
-        <% @tasks.each do |task| %>
-            <% if task.done == true %>
-                <%#  %>
-                <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();", checked: true },('false'),('false')) %>  <% end %> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
-            <% else %>
-                <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();" },('true'),('false')) %>  <% end %> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
-            <% end %>
-        <% end %>
-    </ul>
-     <%#Add new task  %>
-     <%= form_tag tasks_path do %>
-        <%= label_tag :description %>
-        <%= text_field_tag "task[description]" %>
-        <%= hidden_field_tag "task[job_application_id]", @job_application.id %>
-        <%= submit_tag "Add Task" %>
-     <% end %>
+    <%= render partial: 'tasks/task_list', locals: {tasks: @tasks, job_application_id: @job_application.id} %>
+     <!-- new task -->
+     <%= render partial: 'tasks/new_task', locals: {job_application_id: @job_application.id} %>
 </div>
 
 <div>

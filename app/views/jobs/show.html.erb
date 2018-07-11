@@ -4,9 +4,11 @@
 <% if @job.url %>
     <%= link_to 'External Job Posting', @job.url, target="_blank" %>
 <% end %>
+
 <h2>Start your application</h2>
 <%= form_tag applications_path(logged_in_user) do %>
     <%= hidden_field_tag "job_application[job_id]", @job.id %>
     <%= submit_tag "Start application" %>
 <% end %>
+
 <%= link_to 'Delete this Job', job_path(@job), method: "DELETE" %>

@@ -25,7 +25,9 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @tasks = @user.tasks
+    @my_applications = @user.job_applications
+    @general_tasks = @tasks.select{|task| task.job_application_id == nil}
   end
 
   def destroy

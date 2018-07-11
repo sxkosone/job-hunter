@@ -8,11 +8,11 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Job.destroy_all
-JobApplication.destroy_all
 Task.destroy_all
 Event.destroy_all
+JobApplication.destroy_all
+User.destroy_all
+Job.destroy_all
 
 #matt = User.create(name: "Matthew Smith", profession: "Programmer", city: "Washington, DC", username: "matty", password: "password")
 
