@@ -1,6 +1,6 @@
 <% if task.done == true %>
     <%# Check if task is done to show different check boxes  %>
-    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();event.stopPropagation();", checked: true },('false'),('false')) %>  <% end %> <p onclick="showEditForm()" class="inline"><%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></p></li>
+    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();event.stopPropagation();", checked: true },('false'),('false')) %>  <% end %> <p><p onclick="showEditForm()" class="inline"><%= task.description %></p> <p class='link-to'><%= link_to "x", task_path(task), {method: "delete"} %></p></p></li>
 <% else %>
-    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit(); event.stopPropagation();" },('true'),('false')) %>  <% end %> <p onclick="showEditForm()" class = "inline"> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></p></li>
+    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit(); event.stopPropagation();" },('true'),('false')) %>  <% end %> <p><p onclick="showEditForm()" class = "inline"> <%= task.description %></p><p class='link-to'><%= link_to "x", task_path(task), method: "delete" %></p></p></li>
 <% end %>
