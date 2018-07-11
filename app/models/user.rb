@@ -5,5 +5,5 @@ class User < ApplicationRecord
     has_many :tasks
     has_many :events
 
-    validates :username, uniqueness: true
+    validates :username, uniqueness: { case_sensitive: false }
 end
