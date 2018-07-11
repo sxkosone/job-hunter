@@ -15,6 +15,20 @@
  */
 @import "bootstrap";
 
+//ALL pages
+body, html {
+    height: 100%;
+}
+
+.container {
+    padding-top: 20px;
+    min-height: 75%;
+}
+
+footer {
+    height: 15%;
+    background-color: whitesmoke;
+}
 
 // Navbar Style
 .navbar a#brand {
@@ -23,6 +37,19 @@
 
 .navbar-nav li.nav-item {
     font-size: 1.25rem;
+}
+
+//homepage
+.cover-container {
+    margin-top: 100px;
+    min-height: 90vh;
+}
+
+h1.cover-heading {
+    color: white;
+}
+p.lead {
+    color: white;
 }
 
 

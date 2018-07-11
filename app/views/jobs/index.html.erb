@@ -1,11 +1,23 @@
 <h1>Jobs</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
 
-<h2>Add a new job</h2>
-<div>
-    <%= render partial: 'form', locals: {job: @job} %>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <h2>Add a new job</h2>
+            <div>
+                <%= render partial: 'form', locals: {job: @job} %>
+            </div>
+        </div>
+        <div class="col">
+            <h2>View jobs in your area</h2>
+            <% @jobs.each do |job| %>
+                <h4><%= link_to job.position, job_path(job) %> at <%= job.company %></h4>
+                <p><%= job.snippet %></p>
+            <% end %>
+        </div>
+    </div>
 </div>
-<h2>View jobs in your area</h2>
-<% @jobs.each do |job| %>
-    <h3><%= link_to job.position, job_path(job) %> at <%= job.company %></h3>
-<% end %>
+
+
+
+

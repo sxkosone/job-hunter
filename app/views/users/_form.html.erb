@@ -1,17 +1,41 @@
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :profession %>
-    <%= f.text_field :profession %>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+<% if flash.notice %>
+<div class="alert alert-warning" role="alert">
+    <%= flash.notice %>
+</div>
+<% end %>
+
+<div class="row">
+    <div class="form-group col-6">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", required: true %>
+    </div>
+    <div class="form-group col-6">
+        <%= f.label :username %>
+        <%= f.text_field :username, class: "form-control", required: true %>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-6">
+        <%= f.label :profession %>
+        <%= f.text_field :profession, class: "form-control", required: true %>
+    </div>
+    <div class="form-group col-6">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: "form-control", required: true %>
+    </div>
+</div>
     <% if user.id.nil? %>
+<div class="row">
+    <div class="form-group col-4">
         <%= f.label :password %>
-        <%= f.password_field :password %>
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
-        <%= f.submit "Sign up" %>
+        <%= f.password_field :password, class: "form-control", required: true %>
+    </div>
+    <div class="form-group col-4">
+        <%= f.label "Confirm password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+    </div>
+</div>
+        <%= f.submit "Sign up", class: "btn btn-primary" %>
     <% else %>
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class: "btn btn-primary" %>
     <% end %>
