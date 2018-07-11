@@ -18,8 +18,7 @@
     <h2>To do for this application:</h2>
     <!-- List of tasks -->
     <%= render partial: 'tasks/task_list', locals: {tasks: @tasks, job_application_id: @job_application.id} %>
-     <!-- new task -->
-     <%= render partial: 'tasks/new_task', locals: {job_application_id: @job_application.id} %>
+     
 </div>
 
 <div>
@@ -31,14 +30,18 @@
         <% end %>
     </ul>
      <%#Add new event  %>
-     <%= form_tag events_path do %>
-        <%= label_tag :title %>
-        <%= text_field_tag "event[title]" %>
-        <%= label_tag :address %>
-        <%= text_field_tag "event[address]" %>
-        <%= label_tag :date %>
-        <%= date_field_tag "event[date]"%>
+     <%= form_tag events_path, class:"form-inline" do %>
+        <div class="form-group">
+            <%= text_field_tag "event[title]",nil, {class: "form-control m-1", placeholder:"Event Title"} %>
+        </div>
+        <div class="form-group">
+            <%= text_field_tag "event[address]",nil, {class: "form-control m-1", placeholder:"Address"}  %>
+        </div>
+        <div class="form-group">
+            <%= date_field_tag "event[date]",nil, {class: "form-control m-1"} %>
+        </div>
         <%= hidden_field_tag "event[job_application_id]", @job_application.id %>
-        <%= submit_tag "Add Event" %>
+        <%= submit_tag "Add Event", class: "btn btn-primary m-1" %>
+        
      <% end %>
 </div>
