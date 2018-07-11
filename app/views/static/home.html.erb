@@ -1,6 +1,11 @@
 
 <div class="background">
-<%= flash[:notice] %>
+<% if flash.notice %>
+    <div class="alert alert-warning" role="alert">
+        <%= flash.notice %>
+    </div>
+<% end %>
+
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center grey">
       

@@ -27,7 +27,7 @@ body, html {
 
 footer {
     height: 15%;
-    background-color: grey;
+    background-color: whitesmoke;
 }
 
 // Navbar Style
@@ -42,6 +42,7 @@ footer {
 //homepage
 .cover-container {
     margin-top: 100px;
+    min-height: 90vh;
 }
 
 h1.cover-heading {
