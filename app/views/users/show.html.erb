@@ -10,13 +10,11 @@
 <h2>To do -list</h2>
 <h3>General tasks</h3>
 <%= render partial: 'tasks/task_list', locals: {tasks: @general_tasks, job_application_id: nil} %>
+
 <% @my_applications.each do |appl| %>
     <% if appl.tasks.any? %>
         <h3>Application: <%= link_to appl.job.position, application_path(appl) %></h3>
         <%= render partial: 'tasks/task_list', locals: {tasks: appl.tasks, job_application_id: appl.id} %>
     <% end %>
 <% end %>
-
-<%#Add new task  %>
-<%= render partial: 'tasks/new_task', locals: {job_application_id: nil} %>
 

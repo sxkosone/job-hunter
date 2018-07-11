@@ -1,10 +1,11 @@
-<h2>Add a new task</h2>
+<span>
      <%= form_tag tasks_path do %>
-        <%= label_tag :description %>
         <%= text_field_tag "task[description]" %>
         <!-- see if this is general task with no application, or application specific task -->
         <% if job_application_id %>
             <%= hidden_field_tag "task[job_application_id]", job_application_id %>
         <% end %>
         <%= submit_tag "Add Task" %>
-<% end %>
+    <% end %>
+
+</span>

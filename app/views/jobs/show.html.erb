@@ -2,7 +2,7 @@
 <h6>Posted: <%= @job.posted_date %>, City: <%= @job.city %></h6>
 <p><%= @job.description %></p>
 <% if @job.url %>
-    <%= link_to 'External Job Posting', @job.url, target="_blank" %>
+    <%= link_to 'External Job Posting', "http://#{@job.url}", target: "_blank" %>
 <% end %>
 
 <h2>Start your application</h2>

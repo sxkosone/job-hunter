@@ -1,6 +1,6 @@
 <% if task.done == true %>
     <%# Check if task is done to show different check boxes  %>
-    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();", checked: true },('false'),('false')) %>  <% end %> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
+    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();", checked: true },('false'),('false')) %>  <% end %> <p class="inline"><%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></p></li>
 <% else %>
-    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();" },('true'),('false')) %>  <% end %> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></li>
+    <li><%= form_tag task_path(task), method: "patch" do%><%= check_box('task','done',{:onchange => "this.form.submit();" },('true'),('false')) %>  <% end %> <p class = "inline"> <%= task.description %> <%= link_to "x", task_path(task), method: "delete" %></p></li>
 <% end %>
