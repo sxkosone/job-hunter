@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
   before_action :find_job, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
+  
   def index
     #show both form to create new job 
     #and the job feed

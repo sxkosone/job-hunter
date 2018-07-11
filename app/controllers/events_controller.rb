@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+    before_action :require_login
+    
     def create
         event = Event.new(event_params(:title, :job_application_id, :address, :date))
         event.user_id = session[:user_id]

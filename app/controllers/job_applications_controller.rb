@@ -1,5 +1,6 @@
 class JobApplicationsController < ApplicationController
-
+  before_action :require_login
+  
   def index
     @my_applications = JobApplication.where("user_id = ?", session[:user_id])
   end

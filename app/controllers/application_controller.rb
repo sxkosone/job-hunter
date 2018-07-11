@@ -12,7 +12,16 @@ class ApplicationController < ActionController::Base
     end
 
     def logged_in?
-        
         User.find_by(id: session[:user_id]) ? true : false
     end
+
+    private
+
+    def require_login
+        unless logged_in?
+            flash[:notice] = "You must log in or sign up to use our awesome app."
+            redirect_to root_path
+        end
+    end
+
 end

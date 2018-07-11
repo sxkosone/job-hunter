@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    before_action :require_login
     
     def create
         task = Task.new(task_params(:description, :job_application_id))
