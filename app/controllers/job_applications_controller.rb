@@ -14,7 +14,6 @@ class JobApplicationsController < ApplicationController
   def create
     job_id = job_application_params(:job_id)[:job_id]
     @job_application = JobApplication.create(
-      percentage: 0, 
       status: "started", 
       user_id: session[:user_id], 
       job_id: job_id)

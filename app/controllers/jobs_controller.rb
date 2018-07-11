@@ -25,7 +25,7 @@ class JobsController < ApplicationController
   def create
     #create job AND new application
     @job = Job.create(job_params)
-    @job_application = JobApplication.create(percentage: 0, status: "started", job_id: @job.id, user_id: session[:user_id])
+    @job_application = JobApplication.create(status: "started", job_id: @job.id, user_id: session[:user_id])
     redirect_to @job
   end
 
