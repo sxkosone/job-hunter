@@ -2,7 +2,6 @@
 
 function showEditForm(){
     event.stopPropagation()
-    debugger
     var item_text = event.target.firstChild.textContent
     var item_path = $(event.target).parent().find('.link-to').children().attr('href')
     var form_authenticity_token = $('#authenticity')[0].textContent
