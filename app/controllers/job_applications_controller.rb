@@ -13,7 +13,7 @@ class JobApplicationsController < ApplicationController
 
   def create
     job_id = job_application_params(:job_id)[:job_id]
-    @job_application = JobApplication.create(
+    @job_application = JobApplication.find_or_create_by(
       status: "started", 
       user_id: session[:user_id], 
       job_id: job_id)
