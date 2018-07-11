@@ -1,13 +1,40 @@
 <%= form_for job do |f| %>
-    <%= f.label :position %>
-    <%= f.text_field :position %>
-    <%= f.label :company %>
-    <%= f.text_field :company %>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <%= f.label :posted_date %>
-    <%= f.date_field :posted_date %>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-    <%= f.submit "Add job" %>
+    <div class = "row">
+        <div class="form-group col-md-6">
+            <%= f.label :position %>
+            <%= f.text_field :position, class:"form-control"  %>
+        </div>
+        <div class="form-group col-md-6">
+            <%= f.label :company %>
+            <%= f.text_field :company, class:"form-control"  %>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="form-group col-md-12">
+            <%= f.label :description %>
+            <%= f.text_area :description , class:"form-control" %>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="form-group col-md-6">
+            <%= f.label :posted_date%>
+            <%= f.date_field :posted_date , class:"form-control" %>
+        </div>
+        <div class="form-group col-md-6">
+            <%= f.label :city %>
+            <%= f.text_field :city , class:"form-control" %>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="form-group col-md-12">
+            <%= f.label :url, "External URL" %>
+            <%=  f.text_field :url , class:"form-control" %>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="form-group col-md-12">
+           <%= f.submit "Add job", class: "btn btn-primary" %>
+        </div>
+    </div>
+    
 <% end %>
