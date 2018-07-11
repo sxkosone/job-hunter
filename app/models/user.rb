@@ -4,4 +4,5 @@ class User < ApplicationRecord
     has_many :jobs, through: :job_applications
     has_many :tasks
     has_many :events
+
 end
