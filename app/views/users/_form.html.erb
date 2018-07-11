@@ -4,6 +4,8 @@
 </div>
 <% end %>
 
+<%= render partial: 'shared/error_message', locals: {object: @user} %>
+
 <div class="row">
     <div class="form-group col-6">
         <%= f.label :name %>

@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       #redirect to their dashboard or user show page
       redirect_to user_path(@user.username)
     else
+      
       render :new
     end
   end
