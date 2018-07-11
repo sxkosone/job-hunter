@@ -14,3 +14,16 @@
  *= require_self
  */
 @import "bootstrap";
+
+
+// Navbar Style
+.navbar a#brand {
+    font-size:2rem;
+}
+
+.navbar-nav li.nav-item {
+    font-size: 1.25rem;
+}
+
+
+
