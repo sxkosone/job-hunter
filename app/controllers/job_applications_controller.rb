@@ -9,7 +9,7 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.find(params[:id])
     @job = @job_application.job
     @tasks = @job_application.tasks
-    @events = @job_application.events
+    @events = @job_application.events.order(:date)
   end
 
   def create

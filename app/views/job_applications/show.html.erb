@@ -29,24 +29,8 @@
 <div>
     <h2>Events:</h2>
     <!-- List of Events -->
-    <ul>
-        <% @events.each do |event| %>
-            <li><%= event.title %> - <%= event.address %> - <%= event.date %> <%= link_to "x", event_path(event), method: "delete" %></li>
-        <% end %>
-    </ul>
+    <%= render partial: 'events/event_list', locals: {events: @events} %>
+    
      <%#Add new event  %>
-     <%= form_tag events_path, class:"form-inline" do %>
-        <div class="form-group">
-            <%= text_field_tag "event[title]",nil, {class: "form-control m-1", placeholder:"Event Title"} %>
-        </div>
-        <div class="form-group">
-            <%= text_field_tag "event[address]",nil, {class: "form-control m-1", placeholder:"Address"}  %>
-        </div>
-        <div class="form-group">
-            <%= date_field_tag "event[date]",nil, {class: "form-control m-1"} %>
-        </div>
-        <%= hidden_field_tag "event[job_application_id]", @job_application.id %>
-        <%= submit_tag "Add Event", class: "btn btn-primary m-1" %>
-        
-     <% end %>
+    <%= render partial: 'events/new_event', locals: {job_application_id: @job_application.id} %>
 </div>
