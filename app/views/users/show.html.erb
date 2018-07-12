@@ -1,20 +1,22 @@
 <h1>Welcome, <%= @user.name %>!</h1>
-<ul>
-    <li>Username: <%= @user.username %></li>
-    <li>Profession: <%= @user.profession %></li>
-    <li>City: <%= @user.city %></li>
-</ul>
+<p><%= @user.city %></p>
 
-
-
-<h2>To do -list</h2>
-<h3>General tasks</h3>
-<%= render partial: 'tasks/task_list', locals: {tasks: @general_tasks, job_application_id: nil} %>
-
-<% @my_applications.each do |appl| %>
-    <% if appl.tasks.any? %>
-        <h3>Application: <%= link_to appl.job.position, application_path(appl) %></h3>
-        <%= render partial: 'tasks/task_list', locals: {tasks: appl.tasks, job_application_id: appl.id} %>
-    <% end %>
-<% end %>
+<div class="container">
+    <div class="row">
+    <div class="col-6">
+    <h2>Application overview</h2>
+    </div>
+    <div class="col-6 todo-list">
+        <h2>TO DO</h2>
+        <h3>General tasks</h3>
+        <%= render partial: 'tasks/task_list', locals: {tasks: @general_tasks, job_application_id: nil} %>
+        <% @my_applications.each do |appl| %>
+            <% if appl.tasks.any? %>
+                <h3>Application: <%= link_to appl.job.position, application_path(appl) %></h3>
+                <%= render partial: 'tasks/task_list', locals: {tasks: appl.tasks, job_application_id: appl.id} %>
+            <% end %>
+        <% end %>
+    </div>
+    </div>
+</div>
 
