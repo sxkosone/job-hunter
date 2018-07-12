@@ -36,11 +36,7 @@ ul {
     margin: 0;
 }
 
-li { 
-    padding-left: 20px; 
-}
-
-li:before {
+.task-item:before {
     content: ""; /* Insert content that looks like bullets */
     padding-right: 8px;
 }
@@ -77,7 +73,7 @@ p.lead {
     text-transform: uppercase;
 }
 .application-details{
-    background: lightgrey;
+    background: #f7f8fc;
     padding: 20px;
     box-shadow: 2px 2px 5px darkslategrey;
     margin: 10px;
