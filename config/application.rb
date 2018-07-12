@@ -1,4 +1,6 @@
 require_relative 'boot'
+require 'rss'
+require 'open-uri'
 
 require 'rails/all'
 
