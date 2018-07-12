@@ -1,5 +1,6 @@
+<%# this is way too much logic for a view! %>
 <% days_from = (event.date.to_datetime() - DateTime.now).to_i %>
-<% if days_from == 0 %>
+<% if days_from == 0 %> 
     <% date_str = "Today" %>
 <% elsif days_from == 1 %>
     <% date_str = "Tomorrow" %>

@@ -29,7 +29,10 @@ class JobsController < ApplicationController
   def create
     #create job AND new application
     @job = Job.create(job_params)
-    @job_application = JobApplication.create(status: "started", job_id: @job.id, user_id: session[:user_id])
+    @job_application = JobApplication.create(
+      status: "started",
+      job_id: @job.id,
+      user_id: session[:user_id]) # try to split long lines of code.  Isn't it annoying to try to read all the way to the end of my comment?
     redirect_to @job
   end
 
