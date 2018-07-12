@@ -70,4 +70,6 @@ gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.1.1'
 
+#html sanitizer
+gem 'rails-html-sanitizer'
 

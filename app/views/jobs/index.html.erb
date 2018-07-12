@@ -11,8 +11,19 @@
         <div class="col">
             <h2>View jobs in your area</h2>
             <% @all_jobs.each do |job| %>
-                <h4><%= link_to job.position, job_path(job) %> at <%= job.company %></h4>
-                <p><%= job.description %></p>
+                <div>
+                    <h4><a href= '<%=job.url %>' target="_blank"> <%=job.position %></a> at <%= job.company %></h4>
+                    <p><%= job.snippet %></p>
+                    <%= form_tag jobs_path do %>
+                        <%= hidden_field_tag 'job[position]', job.position %>
+                        <%= hidden_field_tag 'job[company]', job.company %>
+                        <%= hidden_field_tag 'job[description]', job.description %>
+                        <%= hidden_field_tag 'job[posted_date]', job.posted_date %>
+                        <%= hidden_field_tag 'job[city]', job.city %>
+                        <%= hidden_field_tag 'job[url]', job.url %>
+                        <%= submit_tag "Add This Job", class:"btn btn-success" %>
+                    <% end %>
+                </div>
             <% end %>
         </div>
     </div>
