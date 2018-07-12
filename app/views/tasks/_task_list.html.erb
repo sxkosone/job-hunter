@@ -6,7 +6,7 @@
             <%= render partial: 'tasks/task', locals: {task: task} %>
         <% end %>
         <li class="task-item">
-        <button class="inline float-left btn-primary" type="button" data-toggle="collapse" data-target="#formfor<%=job_application_id%>" aria-expanded="false" aria-controls="formfor<%=job_application_id%>">+</button>
+        <button class="add-task-button inline float-left" type="button" data-toggle="collapse" data-target="#formfor<%=job_application_id%>" aria-expanded="false" aria-controls="formfor<%=job_application_id%>">+</button>
         <div class = "collapse inline float-left" id="formfor<%=job_application_id%>">
             <%= render partial: 'tasks/new_task', locals: {job_application_id: job_application_id} %>
         </div>
