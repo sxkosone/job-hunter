@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :require_login
   skip_before_action :require_login, only: [:new, :create]
 
+  helper_method :applications_by_status
+
   def new
     @user = User.new
   end

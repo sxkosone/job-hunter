@@ -1,5 +1,28 @@
-<h1>Edit your profile</h1>
+<h1><%= @user.name %>'s profile</h1>
 
-<%= form_for @user, url: user_path(@user.username) do |f| %>
-    <%= render partial: "form", locals: {user: @user, f: f} %>
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Edit your profile info
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+        <%= form_for @user, url: user_path(@user.username) do |f| %>
+            <%= render partial: "form", locals: {user: @user, f: f} %>
+        <% end %>
+  </div>
+</div>
+
+<h2>Job hunt stats</h2>
+
+<% if @user.job_applications.any? %>
+<div class="accomplishments">
+    <h3>Accomplishments <i class="fas fa-trophy"></i></h3>
+
+    <% @user.applications_by_status.each do |status, count| %>
+        <p><%= status + " " + pluralize(count, "application")%></p>
+    <% end %>
+</div>
+<% else %>
+    <h3>You haven't started any applications yet. That's okay, you'll get there!</h3>
 <% end %>
