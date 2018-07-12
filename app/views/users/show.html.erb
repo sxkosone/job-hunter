@@ -22,5 +22,13 @@
         <% end %>
     </div>
     </div>
+    <div class="row">
+        <div class = "col-12">
+            <%= render partial: 'events/event_list', locals: {events: @events} %>
+    
+            <%#Add new event  %>
+            <%= render partial: 'events/new_event', locals: {job_application_id: nil} %>
+        </div>
+    </div>
 </div>
 
