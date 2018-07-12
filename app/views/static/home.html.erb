@@ -1,11 +1,8 @@
-
-<div class="background">
 <% if flash.notice %>
     <div class="alert alert-warning" role="alert">
         <%= flash.notice %>
     </div>
 <% end %>
-
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
       
@@ -18,6 +15,6 @@
         </p>
       </main>
 </div>
-</div>
 
 <%= javascript_tag "$('body').css({'background-image': 'url(https://c.pxhere.com/photos/95/ee/drone_view_aerial_view_forest_woodland_lane-1410050.jpg!d)', 'background-repeat': 'no-repeat', 'background-size': 'cover'});" %>
+<%= javascript_tag "$('.container').css({'display': 'flex'});" %>
