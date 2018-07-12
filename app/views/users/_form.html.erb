@@ -7,32 +7,32 @@
 <%= render partial: 'shared/error_message', locals: {object: @user} %>
 
 <div class="row">
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control", required: true %>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
         <%= f.label :username %>
         <%= f.text_field :username, class: "form-control", required: true %>
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
         <%= f.label :profession %>
         <%= f.text_field :profession, class: "form-control", required: true %>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
         <%= f.label :city %>
         <%= f.text_field :city, class: "form-control", required: true %>
     </div>
 </div>
     <% if user.id.nil? %>
 <div class="row">
-    <div class="form-group col-4">
+    <div class="form-group col-md-4">
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control", required: true %>
     </div>
-    <div class="form-group col-4">
+    <div class="form-group col-md-4">
         <%= f.label "Confirm password" %>
         <%= f.password_field :password_confirmation, class: "form-control", required: true %>
     </div>
