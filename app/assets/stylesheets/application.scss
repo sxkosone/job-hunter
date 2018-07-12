@@ -30,6 +30,21 @@ footer {
     background-color: whitesmoke;
 }
 
+ul {
+    list-style: none; /* Removes list bullets */
+    padding: 10px;
+    margin: 0;
+}
+
+li { 
+    padding-left: 20px; 
+}
+
+li:before {
+    content: ""; /* Insert content that looks like bullets */
+    padding-right: 8px;
+}
+
 
 // Navbar Style
 .navbar a#brand {
