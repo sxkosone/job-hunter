@@ -3,12 +3,14 @@
 <p><%= @job.description %></p>
 <% if @job.url %>
     <%= link_to 'External Job Posting', "http://#{@job.url}", target: "_blank" %>
+    
 <% end %>
-
-<h2>Start your application</h2>
+<div>
+</br>
 <%= form_tag applications_path(logged_in_user) do %>
     <%= hidden_field_tag "job_application[job_id]", @job.id %>
-    <%= submit_tag "Start application" %>
+    <%= submit_tag "Start Your Application", class:"btn btn-primary" %>
 <% end %>
-
-<%= link_to 'Delete this Job', job_path(@job), method: "DELETE" %>
+</br>
+<%= link_to 'Delete this Job', job_path(@job), method: "DELETE",class:"btn btn-danger" %>
+<div>

@@ -1,11 +1,12 @@
 class JobsController < ApplicationController
   before_action :find_job, only: [:show, :edit, :update, :destroy]
   before_action :require_login
+  helper_method :snippet
   
   def index
     #show both form to create new job 
     #and the job feed
-    @jobs = Job.all
+    @all_jobs = Job.all
     #in the future: @jobs = Job.find_by(city: @user.city)
     #pass new job object for the form
     @job = Job.new
