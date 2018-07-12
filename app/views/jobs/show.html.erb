@@ -1,16 +1,9 @@
 <h1><%= @job.position %> at <%= @job.company %></h1>
 <h6>Posted: <%= @job.posted_date %>, City: <%= @job.city %></h6>
-<p><%= @job.description %></p>
+<%= @job.description.html_safe %>
 <% if @job.url %>
     <%= link_to 'External Job Posting', "http://#{@job.url}", target: "_blank" %>
     
 <% end %>
 <div>
 </br>
-<%= form_tag applications_path(logged_in_user) do %>
-    <%= hidden_field_tag "job_application[job_id]", @job.id %>
-    <%= submit_tag "Start Your Application", class:"btn btn-primary" %>
-<% end %>
-</br>
-<%= link_to 'Delete this Job', job_path(@job), method: "DELETE",class:"btn btn-danger" %>
-<div>
