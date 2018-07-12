@@ -12,7 +12,7 @@
         <%= render partial: 'tasks/task_list', locals: {tasks: @general_tasks, job_application_id: nil} %>
         <% @my_applications.each do |appl| %>
             <% if appl.tasks.any? %>
-                <h3>Application: <%= link_to appl.job.position, application_path(appl) %></h3>
+                <h3><%= link_to appl.job.position, application_path(appl) %> at <%= appl.job.company %></h3>
                 <%= render partial: 'tasks/task_list', locals: {tasks: appl.tasks, job_application_id: appl.id} %>
             <% end %>
         <% end %>
