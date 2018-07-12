@@ -3,7 +3,7 @@
     <div class="col-8 application-details">
         <h1>Your application to <%= @job.company %></h1>
         <h2><%= @job.position %></h2>
-        <p><%= @job.description %></p>
+        <%= @job.description.html_safe %>
         <p>Posted: <%= @job.posted_date %></p>
     </div>
     <div class="col-2">

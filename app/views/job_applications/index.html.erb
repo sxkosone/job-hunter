@@ -1,5 +1,6 @@
 <h1>My job applications</h1>
 <% @my_applications.each do |appl| %>
-    <h2><%= link_to appl.job.position, application_path(appl) %> at <%= appl.job.company %> <span class="status"><%= appl.status %></span></h2>
-    <p><%= appl.job.description %></p>
+    <h2><%= appl.job.position %> at <%= appl.job.company %> <span class="status"><%= appl.status %></span></h2>
+    <p><%= appl.job.snippet %></p>
+    <%= link_to "View Application", application_path(appl) %>
 <% end %>
