@@ -51,7 +51,7 @@ p.lead {
     color: white;
 }
 
-//status of application
+//APPLICATION
 .status {
     background-color: #20a8ad;
     color: white;
@@ -60,4 +60,9 @@ p.lead {
     font-size: 0.6em;
     text-transform: uppercase;
 }
-
+.application-details{
+    background: lightgrey;
+    padding: 20px;
+    box-shadow: 2px 2px 5px darkslategrey;
+    margin: 10px;
+}
