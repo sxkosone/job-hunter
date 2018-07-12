@@ -14,7 +14,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    #after clicking on a job in feed, user can view job details
+    #after adding a job from feed, user can view job details
 
   end
 

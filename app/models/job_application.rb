@@ -4,7 +4,7 @@ class JobApplication < ApplicationRecord
   has_many :tasks
   has_many :events
 
-  @@STATUS = ["started", "submitted", "interviewing", "heard back", "completed", "deleted"]
+  @@STATUS = ["started", "completed", "submitted", "interviewing for"]
   
   def self.status
     @@STATUS

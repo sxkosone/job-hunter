@@ -1,7 +1,6 @@
 require 'rss'
 class Job < ApplicationRecord
     has_many :job_applications
-    
 
     def snippet
         full_sanitizer = Rails::Html::FullSanitizer.new
