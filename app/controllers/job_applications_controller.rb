@@ -14,6 +14,7 @@ class JobApplicationsController < ApplicationController
 
   def create
     job_id = job_application_params(:job_id)[:job_id]
+    # I'm confused as to what this ^^^ does.  If it's working, teach me!
     @job_application = JobApplication.find_or_create_by(
       status: "started", 
       user_id: session[:user_id], 
@@ -32,6 +33,9 @@ class JobApplicationsController < ApplicationController
 
   private
   def job_application_params(*args)
+    # I would have to research, but I think by using *args you're
+    # undoing the protection provided by strong_params as now anything
+    # is accepted again
     params.require(:job_application).permit(*args)
   end
 end

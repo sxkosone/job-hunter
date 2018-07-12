@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
         end
     end
 
-    def logged_in?
+    def logged_in? 
+    # does this break if session doesn't have a user_id set?
         User.find_by(id: session[:user_id]) ? true : false
     end
 

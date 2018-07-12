@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_action :require_login
+    before_action :require_login # good use of before_action
     
     def create
         event = Event.new(event_params(:title, :job_application_id, :address, :date))

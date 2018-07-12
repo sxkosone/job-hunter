@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if authenticated
       @user = user
       session[:user_id] = @user.id
-      redirect_to user_path(@user.username)
+      redirect_to user_path(@user.username) # is .username necessary here?
     else
       flash.now[:notice] = "Username and/or password incorrect"
       render :new
