@@ -17,5 +17,11 @@ class User < ApplicationRecord
         end
     end
 
+    def past_events
+        self.events.count do |event|
+            event.date.past?()
+        end
+    end
+
     
 end

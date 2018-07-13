@@ -22,7 +22,11 @@
     <% @user.applications_by_status.each do |status, count| %>
         <p><%= status + " " + pluralize(count, "application")%></p>
     <% end %>
+    <% if @user.past_events > 0 %>
+        <p>... and attended <%= pluralize(@user.past_events, "event") %>.</p>
+    <% end %>
+    <h5>Good job, keep it up!</h5>
 </div>
 <% else %>
-    <h3>You haven't started any applications yet. That's okay, you'll get there!</h3>
+    <h2>You haven't started any applications yet. That's okay, you'll get there!</h2>
 <% end %>
