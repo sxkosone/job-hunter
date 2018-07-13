@@ -14,7 +14,7 @@ function showTaskEditForm() {
     $("input.update-task").blur(function() {
         // If the user has not changed the input the form will not submit
         if ($(this)['0'].value === item_text) {
-            $('form.update-task').replaceWith(`<p class="inline">${item_text} <i onclick="showEditForm()" class="fas fa-pencil-alt"></i></p>`)
+            $('form.update-task').replaceWith(`<p class="inline">${item_text} <i onclick="showTaskEditForm()" class="fas fa-pencil-alt"></i></p>`)
         } else {
             // If the user changed the value and clicks away the value will update
             $("form.update-task").submit();
