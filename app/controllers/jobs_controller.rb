@@ -29,7 +29,7 @@ class JobsController < ApplicationController
     #create job AND new application
     @job = Job.create(job_params)
     @job_application = JobApplication.create(status: "started", job_id: @job.id, user_id: session[:user_id])
-    redirect_to @job
+    redirect_to application_path(@job_application)
   end
 
   def destroy
