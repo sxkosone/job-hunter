@@ -19,3 +19,4 @@
 //= require popper
 //= require bootstrap
 //= require task
+//= require event

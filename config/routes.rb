@@ -36,5 +36,9 @@ Rails.application.routes.draw do
   patch '/events/:id', to: "events#update", as: 'event'
   delete '/events/:id', to: "events#destroy"
 
+
+  #Redirect if route not found
+  get '*path' => redirect('/')
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
