@@ -73,6 +73,7 @@ p.lead {
     border-radius: 4px;
     font-size: 0.6em;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .started {
@@ -96,6 +97,10 @@ p.lead {
     padding: 20px;
     box-shadow: 2px 2px 5px darkslategrey;
     margin: 10px;
+}
+
+.delete-button {
+    margin: 15px;
 }
 //USER dashboard
 .todo-list {
