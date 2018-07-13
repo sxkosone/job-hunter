@@ -6,8 +6,8 @@ class JobsController < ApplicationController
   def index
     #show both form to create new job 
     #and the job feed
-    user = User.find(session[:user_id])
-    @all_jobs = Job.job_feed(user.city)
+    @user = User.find(session[:user_id])
+    @all_jobs = Job.job_feed(@user.city)
     #in the future: @jobs = Job.find_by(city: @user.city)
     #pass new job object for the form
     @job = Job.new
