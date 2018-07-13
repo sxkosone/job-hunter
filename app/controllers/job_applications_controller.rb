@@ -43,7 +43,7 @@ class JobApplicationsController < ApplicationController
     if @job_application.nil?
       flash[:notice] = "Sorry, incorrect URL"
       redirect_to user_path(logged_in_user)
-    elsif @job_application.user.id!=session[:user_id]
+    elsif @job_application.user_id != session[:user_id]
       flash[:notice] = "You cannot access this page"
       redirect_to user_path(logged_in_user)
     end
