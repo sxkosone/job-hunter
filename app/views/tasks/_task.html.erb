@@ -4,13 +4,13 @@
     <%= check_box('task','done',{
         :onchange => "this.form.submit();event.stopPropagation();", checked: true },('false'),('false')) %>  
     <% end %> 
-        <p class = "inline"><p class="inline"><%= task.description %> <i onclick="showEditForm()" class="fas fa-pencil-alt"></i></p> 
+        <p class = "inline"><p class="inline"><%= task.description %> <i onclick="showTaskEditForm()" class="fas fa-pencil-alt"></i></p> 
         <p class='link-to inline'><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task), {method: "delete"} %></p></p></li>
 <% else %>
     <li class="task-item"><%= form_tag task_path(task), method: "patch" do%>
     <%= check_box('task','done',{
         :onchange => "this.form.submit(); event.stopPropagation();" },('true'),('false')) %>  
     <% end %> 
-        <p class = "inline"><p  class = "inline"> <%= task.description %> <i onclick="showEditForm()" class="fas fa-pencil-alt"></i></p>
+        <p class = "inline"><p  class = "inline"> <%= task.description %> <i onclick="showTaskEditForm()" class="fas fa-pencil-alt"></i></p>
         <p  class='link-to inline'><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task), method: "delete" %></p></p></li>
 <% end %>

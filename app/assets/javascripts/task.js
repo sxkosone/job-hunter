@@ -1,6 +1,6 @@
 
 
-function showEditForm() {
+function showTaskEditForm() {
     event.stopPropagation()
     var item_text = $(event.target).parent()["0"].innerText
     var item_path = $(event.target).parent().parent().find('.link-to').children().attr('href')

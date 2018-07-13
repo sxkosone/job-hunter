@@ -16,8 +16,21 @@
         <td><span class = "event-title"><%= event.title %></span></td>
         <td><span class="event-address"><%= event.address %></span></td>
         <td><span class="event-date"><%= date_str %></span></td>
+        <td><span class="event-edit"><i class="fas fa-pencil-alt"></i></td>
         <td><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, event_path(event), method: "delete" %></td>
     </tr>
+    <form action= "<%= event_path(event) %>" method="post" >
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="_method" value="patch">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <tr>
+            <td><%= text_field_tag 'event[title]', event.title %></td>
+            <td><%= text_field_tag 'event[address]', event.address %></td>
+            <td><%= date_field_tag 'event[date]', event.date %></td>
+            <td><%= submit_tag 'Save'%></td>
+            <td><span class="event-edit"><button>Cancel</button></td>
+        </tr>
+    </form>
 
 <% end %>
     

@@ -46,8 +46,12 @@ class UsersController < ApplicationController
     if @user.nil?
       flash[:notice] = "Sorry, incorrect URL"
       redirect_to user_path(logged_in_user)
+    elsif @user.id!=session[:user_id]
+      flash[:notice] = "You cannot access this page"
+      redirect_to user_path(logged_in_user)
     end
   end
+
 
   def user_params(*args)
     params.require(:user).permit(*args)
