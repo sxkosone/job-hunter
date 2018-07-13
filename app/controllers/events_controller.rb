@@ -7,9 +7,16 @@ class EventsController < ApplicationController
         event.save
         redirect_back fallback_location: user_path(logged_in_user)
     end
+    def edit
+        @event = Event.find(params[:id])
+    end
     def update
-        Event.update(params[:id],event_params(:title,:address, :date))
-        redirect_back fallback_location: user_path(logged_in_user)
+        event = Event.update(params[:id],event_params(:title,:address, :date))
+        if event.job_application_id.nil?
+            redirect_to user_path(logged_in_user)
+        else
+            redirect_to application_path(event.job_application_id)
+        end
     end
 
     def destroy

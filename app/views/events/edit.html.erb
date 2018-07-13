@@ -1,0 +1,33 @@
+<div class = "card card-body">
+<%= form_for @event do |f| %>
+    <div class = "table-row">
+        <div class="form-group">
+            <div class="form-group-prepend">
+                <div class="form-group-text"><%= f.label :title %></div>
+            </div>
+            <%= f.text_field :title,class: "form-control" %>
+        </div>
+    </div>
+    <div class = "table-row">
+        <div class="form-group">
+            <div class="form-group-prepend">
+                <div class="form-group-text"><%= f.label :address %></div>
+            </div>
+            <%= f.text_field :address,class: "form-control" %>
+        </div>
+    </div>
+    <div class = "table-row">
+        <div class="form-group">
+            <div class="form-group-prepend">
+                <div class="form-group-text"><%= f.label :date %></div>
+            </div>
+            <%= f.text_field :date,class: "form-control" %>
+        </div>
+    </div>
+    <div class = "table-row">
+        <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+    
+
+<% end %>
+</div>
