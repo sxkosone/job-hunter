@@ -27,9 +27,16 @@ class JobsController < ApplicationController
 
   def create
     #create job AND new application
-    @job = Job.create(job_params)
-    @job_application = JobApplication.create(status: "started", job_id: @job.id, user_id: session[:user_id])
-    redirect_to application_path(@job_application)
+    @job = Job.find_by(job_params)
+    if @job
+      flash[:notice] = "You already have an in progress application for this job"
+      @job_application = JobApplication.find_by(job_id: @job.id, user_id: session[:user_id])
+      redirect_to application_path(@job_application)
+    else
+      @job = Job.create(job_params)
+      @job_application = JobApplication.find_or_create_by(status: "started", job_id: @job.id, user_id: session[:user_id])
+      redirect_to application_path(@job_application)
+    end
   end
 
   def destroy

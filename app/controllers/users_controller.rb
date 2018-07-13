@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def show
     @tasks = @user.tasks
-    @my_applications = @user.job_applications
+    @my_applications = @user.job_applications.order(updated_at: :desc).limit(5)
     @general_tasks = @tasks.select{|task| task.job_application_id == nil}
     @events = @user.events.where('date > ?',DateTime.now).order(:date)
   end
