@@ -5,7 +5,7 @@
             <div class="form-group-prepend">
                 <div class="form-group-text"><%= f.label :title %></div>
             </div>
-            <%= f.text_field :title,class: "form-control" %>
+            <%= f.text_field :title,{class: "form-control", required: true} %>
         </div>
     </div>
     <div class = "table-row">
@@ -13,7 +13,7 @@
             <div class="form-group-prepend">
                 <div class="form-group-text"><%= f.label :address %></div>
             </div>
-            <%= f.text_field :address,class: "form-control" %>
+            <%= f.text_field :address,{class: "form-control", required: true} %>
         </div>
     </div>
     <div class = "table-row">
@@ -21,7 +21,7 @@
             <div class="form-group-prepend">
                 <div class="form-group-text"><%= f.label :date %></div>
             </div>
-            <%= f.text_field :date,class: "form-control" %>
+            <%= f.date_field :date,{class: "form-control", required: true, min: "#{Date.today}"} %>
         </div>
     </div>
     <div class = "table-row">
