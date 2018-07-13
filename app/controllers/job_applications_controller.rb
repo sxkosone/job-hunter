@@ -30,13 +30,10 @@ class JobApplicationsController < ApplicationController
   end
 
   def destroy
-    job = @job_application.job
     #destroy events and tasks of that application
     @job_application.application_task_event_destroyer
     #destroy that application
     @job_application.destroy
-    #finally, destroy job of application
-    job.destroy
     redirect_to applications_path(logged_in_user)
   end
 
