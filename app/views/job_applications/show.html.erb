@@ -1,10 +1,11 @@
-<div class="container">
-<div class="row">
-    <div class="col-8 application-details">
-        <h1>Your application to <%= @job.company %></h1>
-        <h2><%= @job.position %></h2>
-        <%= @job.description.html_safe %>
-        <p>Posted: <%= @job.posted_date %></p>
+
+<div>
+<h2>Application completion: <%= @job_application.completion_percentage %> / 100 %</h2>
+<div class="row justify-content-around">
+    <div class="col-md-6 todo-list">
+        <h2>To do for this application:</h2>
+        <!-- List of tasks -->
+        <%= render partial: 'tasks/task_list', locals: {tasks: @tasks, job_application_id: @job_application.id} %>
     </div>
     <div class="col-2">
         <h2>Status:</h2>
@@ -16,21 +17,23 @@
         <% end %>
     </div>
 </div>
-</div>
-<h2>Application completion: <%= @job_application.completion_percentage %> / 100 %</h2>
 
-<div class="col-md-6 todo-list">
-    <h2>To do for this application:</h2>
-    <!-- List of tasks -->
-    <%= render partial: 'tasks/task_list', locals: {tasks: @tasks, job_application_id: @job_application.id} %>
-     
-</div>
-
-<div>
+<div class='row pb-3 pt-2'>
+    
     <h2>Events:</h2>
     <!-- List of Events -->
     <%= render partial: 'events/event_list', locals: {events: @events} %>
     
      <%#Add new event  %>
     <%= render partial: 'events/new_event', locals: {job_application_id: @job_application.id} %>
+</div>
+
+<div class="row">
+    <div class=" application-details">
+        <h1>Your application to <%= @job.company %></h1>
+        <h2><%= @job.position %></h2>
+        <%= @job.description.html_safe %>
+        <p>Posted: <%= @job.posted_date %></p>
+    </div>
+</div>
 </div>

@@ -1,0 +1,10 @@
+
+<div class="card">
+    <div class="card-header">
+        <div></div><h2><%= appl.job.position %> at <%= appl.job.company %> <span class="status"><%= appl.status %></span></h2>
+    </div>
+    <div class="card-body">
+        <div></div><p><%= appl.job.snippet %></p>
+        <%= link_to "View Application", application_path(appl), class:"btn btn-primary" %>
+    </div>
+</div>

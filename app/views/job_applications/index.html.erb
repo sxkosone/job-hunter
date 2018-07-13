@@ -1,6 +1,4 @@
 <h1>My job applications</h1>
 <% @my_applications.each do |appl| %>
-    <h2><%= appl.job.position %> at <%= appl.job.company %> <span class="status"><%= appl.status %></span></h2>
-    <p><%= appl.job.snippet %></p>
-    <%= link_to "View Application", application_path(appl) %>
+    <%= render partial: 'job_application_list_item', locals: {appl: appl} %>
 <% end %>
