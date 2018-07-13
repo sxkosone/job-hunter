@@ -3,7 +3,7 @@
     <% date_str = "Today" %>
 <% elsif days_from == 1 %>
     <% date_str = "Tomorrow" %>
-<% elsif days_from <= 10 %>
+<% elsif days_from <= 5 %>
     <% date_str = "In #{days_from} days" %>
 <% else%>
     <% date_str = event.date.strftime('%A, %B %d') %>

@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @tasks = @user.tasks
     @my_applications = @user.job_applications.order(updated_at: :desc).limit(5)
     @general_tasks = @tasks.select{|task| task.job_application_id == nil}
-    @events = @user.events.where('date > ?',DateTime.now).order(:date)
+    @events = @user.events.where('date >= ?',Date.today).order(:date)
   end
 
   def destroy
