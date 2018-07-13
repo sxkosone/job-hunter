@@ -39,7 +39,14 @@ class JobApplicationsController < ApplicationController
 
   private
   def find_job_application
-    @job_application = JobApplication.find(params[:id])
+    @job_application = JobApplication.find_by(id: params[:id])
+    if @job_application.nil?
+      flash[:notice] = "Sorry, incorrect URL"
+      redirect_to user_path(logged_in_user)
+    elsif @job_application.user.id!=session[:user_id]
+      flash[:notice] = "You cannot access this page"
+      redirect_to user_path(logged_in_user)
+    end
   end
 
   def job_application_params(*args)
