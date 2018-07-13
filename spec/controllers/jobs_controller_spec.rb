@@ -24,4 +24,6 @@ RSpec.describe JobsController do
             expect(subject.logged_in_user).to eq user.username
         end
     end
+
+    
 end

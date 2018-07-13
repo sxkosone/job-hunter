@@ -36,4 +36,8 @@
         <p>Posted: <%= @job.posted_date %></p>
     </div>
 </div>
+<div>
+<br>
+    <%= link_to 'Delete this Application', application_path(@job_application), method: "DELETE",class:"btn btn-danger" %>
+
 </div>

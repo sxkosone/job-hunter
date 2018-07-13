@@ -13,7 +13,7 @@ describe 'navigation', type: 'feature' do
 
         it 'can go to jobs page' do 
             click_link('Job Feed')
-            expect(page).to have_content('View jobs in your area')
+            expect(page).to have_content('View jobs in Washington, DC')
         end
 
         it 'can go to applications page' do 

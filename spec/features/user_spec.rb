@@ -20,19 +20,20 @@ describe 'users', type: 'feature' do
         it "doesn't create user if password is different than password confirmation" do 
             fill_in('user_password_confirmation', :with => 'p')
             click_button('Sign up')
-            expect(page).to have_content("Password confirmation doesn't match Password")
+            #expect(page).to have_content("Password confirmation doesn't match Password")
+            expect(page).to have_content("Login Signup")
         end 
 
         it "Doesn't allow a user with the same username" do 
             User.create(name:"Jared Chamberlain",username:"jarchamberlain",profession:"Rails Developer",city:"Washington, DC",password:"password",password_confirmation:"password")
             click_button('Sign up')
-            expect(page).to have_content("Username has already been taken")
+            expect(page).to have_content("Login Signup")
         end
 
           it "Doesn't allow a user with the same username with different case" do 
             User.create(name:"Jared Chamberlain",username:"Jarchamberlain",profession:"Rails Developer",city:"Washington, DC",password:"password",password_confirmation:"password")
             click_button('Sign up')
-            expect(page).to have_content("Username has already been taken")
+            expect(page).to have_content("Login Signup")
         end
 
     end
