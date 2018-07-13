@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :require_login
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, only: [:new, :create]
 
   helper_method :applications_by_status
