@@ -1,6 +1,5 @@
 
 
-
 function showEditForm() {
     event.stopPropagation()
     var item_text = $(event.target).parent()["0"].innerText
