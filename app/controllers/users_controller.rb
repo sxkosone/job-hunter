@@ -25,8 +25,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params(:name, :username, :profession, :city))
-    redirect_to user_path(@user.username)
+    #ADD USER VALIDATION HERE TO CHECK THAT NO ONE ADDS SOMEONE ELSES USERNAME
+    if @user.update(user_params(:name, :username, :profession, :city))
+      render :edit
+    else
+      flash.now[:notice] = "Invalid information - could not update your profile"
+      render :edit
+    end
   end
 
   def show
