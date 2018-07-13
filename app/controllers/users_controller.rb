@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       #redirect to their dashboard or user show page
+      flash[:welcome] = "Welcome to the JOBbuddy app! This is the place to organize your job hunt. \nYou can now browse jobs in your city, click to add them to your list of applications, and add important tasks and events to each application."
       redirect_to user_path(@user.username)
     else
       render :new

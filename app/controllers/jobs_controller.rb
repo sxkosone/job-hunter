@@ -8,7 +8,6 @@ class JobsController < ApplicationController
     #and the job feed
     @user = User.find(session[:user_id])
     @all_jobs = Job.job_feed(@user.city)
-    #in the future: @jobs = Job.find_by(city: @user.city)
     #pass new job object for the form
     @job = Job.new
   end
