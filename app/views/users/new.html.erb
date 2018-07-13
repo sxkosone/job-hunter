@@ -1,4 +1,8 @@
 <h1>Sign Up</h1>
+
+<% if @user.errors %>
+    <%= render partial: 'shared/error_message', locals: {object: @user} %>
+<% end %>
 <%= form_for @user do |f| %>
     <%= render partial: "form", locals: {user: @user, f: f} %>
 <% end %>
