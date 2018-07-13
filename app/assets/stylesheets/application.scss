@@ -68,13 +68,29 @@ p.lead {
 
 //JOB APPLICATION
 .status {
-    background-color: #20a8ad;
     color: white;
-    padding: 2px;
+    padding: 4px;
     border-radius: 4px;
     font-size: 0.6em;
     text-transform: uppercase;
 }
+
+.started {
+    background-color: #20a8ad;
+}
+
+.completed {
+    background-color: #5cb85c;
+}
+
+.submitted {
+    background-color: green;
+}
+
+.interviewing {
+    background-color: palevioletred;
+}
+
 .application-details{
     background: #f7f8fc;
     padding: 20px;
