@@ -34,3 +34,9 @@
      <%#Add new event  %>
     <%= render partial: 'events/new_event', locals: {job_application_id: @job_application.id} %>
 </div>
+
+<div>
+<br>
+    <%= link_to 'Delete this Application', application_path(@job_application), method: "DELETE",class:"btn btn-danger" %>
+
+</div>

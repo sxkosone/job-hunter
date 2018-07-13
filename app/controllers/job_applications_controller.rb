@@ -1,12 +1,12 @@
 class JobApplicationsController < ApplicationController
   before_action :require_login
+  before_action :find_job_application, only: [:show, :edit, :update, :destroy]
   
   def index
     @my_applications = JobApplication.where("user_id = ?", session[:user_id])
   end
   
   def show
-    @job_application = JobApplication.find(params[:id])
     @job = @job_application.job
     @tasks = @job_application.tasks
     @events = @job_application.events.order(:date)
@@ -25,12 +25,26 @@ class JobApplicationsController < ApplicationController
   end
 
   def update
-    @job_application = JobApplication.find(params[:id])
     @job_application.update(job_application_params(:status))
     redirect_to application_path(@job_application)
   end
 
+  def destroy
+    job = @job_application.job
+    #destroy events and tasks of that application
+    @job_application.application_task_event_destroyer
+    #destroy that application
+    @job_application.destroy
+    #finally, destroy job of application
+    job.destroy
+    redirect_to applications_path(logged_in_user)
+  end
+
   private
+  def find_job_application
+    @job_application = JobApplication.find(params[:id])
+  end
+
   def job_application_params(*args)
     params.require(:job_application).permit(*args)
   end
