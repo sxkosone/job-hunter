@@ -1,6 +1,12 @@
 <h1>Welcome, <%= @user.name %>!</h1>
 <p><%= @user.city %></p>
 
+<% if flash[:welcome] %>
+    <div class="alert alert-primary" role="alert">
+        <%= flash[:welcome] %>
+    </div>
+<% end %>
+
 <div class="container">
     <div class="row">
     <div class="col-md-6">

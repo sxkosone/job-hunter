@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="col">
-            <h2>View jobs in your area</h2>
+            <h2>View jobs in <%= @user.city %></h2>
             <% @all_jobs.each do |job| %>
                 <div>
                     <h4><a href= '<%=job.url %>' target="_blank"> <%=job.position %></a> at <%= job.company %></h4>
