@@ -43,6 +43,10 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by(username: params[:username])
+    if @user.nil?
+      flash[:notice] = "Sorry, incorrect URL"
+      redirect_to user_path(logged_in_user)
+    end
   end
 
   def user_params(*args)
