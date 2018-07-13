@@ -8,16 +8,11 @@
 <% else%>
     <% date_str = event.date.strftime('%A, %B %d') %>
 <% end %>
-
-<% if days_from < 0 %>
-
-<% else %>
-    <tr>
-        <td><span class = "event-title"><%= event.title %></span></td>
-        <td><span class="event-address"><%= event.address %></span></td>
-        <td><span class="event-date"><%= date_str %></span></td>
-        <td><span class="event-edit"> <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, event_edit_path(event) %> </td>
-        <td><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, event_path(event), method: "delete" %></td>
-    </tr>
-<% end %>
     
+<tr>
+    <td><span class = "event-title"><%= event.title %></span></td>
+    <td><span class="event-address"><%= event.address %></span></td>
+    <td><span class="event-date"><%= date_str %></span></td>
+    <td><span class="event-edit"> <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, event_edit_path(event) %> </td>
+    <td><%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, event_path(event), method: "delete" %></td>
+</tr>

@@ -21,9 +21,9 @@
         <h4>General tasks</h4>
         <%= render partial: 'tasks/task_list', locals: {tasks: @general_tasks, job_application_id: nil} %>
         <% @my_applications.each do |appl| %>
-            <% if appl.tasks.any? %>
+            <% if appl.tasks.select{|task|task.done==false}.any? %>
                 <h4><%= link_to appl.job.position, application_path(appl) %> at <%= appl.job.company %></h4>
-                <%= render partial: 'tasks/task_list', locals: {tasks: appl.tasks, job_application_id: appl.id} %>
+                <%= render partial: 'tasks/task_list', locals: {tasks: appl.tasks.select{|task|task.done==false}, job_application_id: appl.id} %>
             <% end %>
         <% end %>
     </div>
