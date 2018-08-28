@@ -5,7 +5,7 @@ This is a development version of an application for your job hunt. JOBuddy enabl
 
 JOBuddy aims to help users manage their job hunt and keep track of all the applications they send and events and deadlines they do not want to miss.
 
-Can be viewed live at Heroku, newest version coming soon!
+Can be viewed live at Heroku: https://sheltered-woodland-79144.herokuapp.com/
 
 * Ruby version
 ruby 2.3.4
